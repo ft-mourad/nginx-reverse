@@ -1,11 +1,11 @@
 version: "2.1"
 services:
   nginx_hello:
-    image: wrap/nginx-hello
+    build: ./nginx-hello
   nginx_goodbye:
-    image: wrap/nginx-goodbye
+    build: ./nginx-goodbye
   nginx_proxy:
-    image: wrap/nginx-proxy
+    build: ./nginx-proxy
     links:
       - nginx_hello
       - nginx_goodbye
