@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+  nginx_hello:
+    image: wrap/nginx-hello
+  nginx_goodbye:
+    image: wrap/nginx-goodbye
+  nginx_proxy:
+    image: wrap/nginx-proxy
+    links:
+      - nginx_hello
+      - nginx_goodbye
+    ports:
+      - 80:80
+      - 443:443
